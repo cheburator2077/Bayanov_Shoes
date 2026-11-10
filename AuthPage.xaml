@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Bayanov_Shoes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AuthPage">
+      Title="AuthPage" FontFamily="Comic Sans MS">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -18,5 +18,14 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Логин" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" Margin="15"/>
+        <TextBox Name="LoginTB" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="15"/>
+
+        <TextBlock Text="Пароль" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" Margin="15"/>
+        <TextBox Name="PasswordTB" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="15"/>
+
+        <Button Name="LoginHostBtn" Content="Войти как гость" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0 0 50 0" Click="LoginHostBtn_Click"/>
+        <Button Name="LoginBtn" Content="Войти" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="50 0 0 0" Click="LoginBtn_Click"/>
     </Grid>
 </Page>

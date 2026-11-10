@@ -7,13 +7,17 @@
       mc:Ignorable="d" 
       d:DesignHeight="450"
       Title="ProductPage" FontFamily="Comic Sans MS">
-
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" VerticalAlignment="Bottom">
+            <TextBlock Text="Вы вошли" FontSize="20"/>
+        </WrapPanel>
 
         <Grid Grid.Row="1" Margin="10,5,10,5">
             <Grid.ColumnDefinitions>

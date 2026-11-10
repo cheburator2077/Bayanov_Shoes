@@ -24,5 +24,36 @@ namespace Bayanov_Shoes
         {
             InitializeComponent();
         }
+
+        private void LoginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string login = LoginTB.Text;
+            string password = PasswordTB.Text;
+            if (login == "" || password == "")
+            {
+                MessageBox.Show("Есть пустые поля");
+                return;
+            }
+
+            User user = Bayanov41SizeEntities.GetContext().User.ToList().Find(p => p.UserLogin == login && p.UserPassword == password);
+            if (user != null)
+            {
+                Manager.MainFrame.Navigate(new ProductPage());
+                LoginTB.Text = "";
+                PasswordTB.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Введены неверные данные");
+                LoginBtn.IsEnabled = false;
+                LoginBtn.IsEnabled = true;
+                
+            }
+        }
+
+        private void LoginHostBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace Bayanov_Shoes
         {
             InitializeComponent();
             Manager.MainFrame = MainFrame;
-            Manager.MainFrame.Navigate(new ProductPage());
+            Manager.MainFrame.Navigate(new AuthPage());
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
