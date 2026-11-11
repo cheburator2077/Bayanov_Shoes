@@ -19,13 +19,23 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Text="Логин" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" Margin="15"/>
-        <TextBox Name="LoginTB" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="15"/>
+        <TextBlock Text="Логин" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="20" Margin="15"/>
+        <TextBox Name="LoginTB" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Margin="15"/>
 
-        <TextBlock Text="Пароль" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" Margin="15"/>
-        <TextBox Name="PasswordTB" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="15"/>
+        <TextBlock Text="Пароль" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="20" Margin="15"/>
+        <TextBox Name="PasswordTB" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="15"/>
 
         <Button Name="LoginHostBtn" Content="Войти как гость" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" Margin="0 0 50 0" Click="LoginHostBtn_Click"/>
         <Button Name="LoginBtn" Content="Войти" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="50 0 0 0" Click="LoginBtn_Click"/>
+
+        <TextBlock Name="CaptchaText" Text="Введи символы с CAPTCHA" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" Margin="15" Visibility="Collapsed"/>
+        <TextBox Name="CaptchaTB" Grid.Row="1" Grid.Column="1" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,15,0" Visibility="Collapsed"/>
+        <StackPanel Name="CaptchaPanel" Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Visibility="Collapsed">
+            <TextBlock Name="captchaOneWord"   FontSize="22" Margin="30,0,0,0"/>
+            <TextBlock Name="captchaTwoWord"   FontSize="22" TextDecorations="StrikeThrough" Margin="0,5,0,0"/>
+            <TextBlock Name="captchaThreeWord" FontSize="22" TextDecorations="StrikeThrough"/>
+            <TextBlock Name="captchaFourWord"  FontSize="22" Margin="0,10,0,0"/>
+        </StackPanel>
+
     </Grid>
 </Page>
