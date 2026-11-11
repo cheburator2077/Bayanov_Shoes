@@ -38,7 +38,7 @@ namespace Bayanov_Shoes
             User user = Bayanov41SizeEntities.GetContext().User.ToList().Find(p => p.UserLogin == login && p.UserPassword == password);
             if (user != null)
             {
-                Manager.MainFrame.Navigate(new ProductPage());
+                Manager.MainFrame.Navigate(new ProductPage(user));
                 LoginTB.Text = "";
                 PasswordTB.Text = "";
             }

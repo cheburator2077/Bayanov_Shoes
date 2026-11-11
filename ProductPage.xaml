@@ -15,9 +15,10 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <WrapPanel Grid.Row="0" VerticalAlignment="Bottom">
-            <TextBlock Text="Вы вошли" FontSize="20"/>
-        </WrapPanel>
+        <StackPanel Grid.Row="0" Margin="40 0 0 0" VerticalAlignment="Bottom">
+            <TextBlock Text="Вы авторизованы как" Name="FIOTB" FontSize="20"/>
+            <TextBlock Text="Роль:" Name="Role" FontSize="20"/>
+        </StackPanel>
 
         <Grid Grid.Row="1" Margin="10,5,10,5">
             <Grid.ColumnDefinitions>
@@ -44,9 +45,9 @@
                 <TextBlock Text="фильтрация по скидке" FontSize="20"/>
                 <ComboBox Name="ComboType" Width="150" SelectionChanged="ComboType_SelectionChanged" Margin="0 5 0 0">
                     <TextBlock>Все</TextBlock>
-                    <TextBlock>от 0 до 10%</TextBlock>
-                    <TextBlock>от 10 до 15%</TextBlock>
-                    <TextBlock>от 15 до 100%</TextBlock>
+                    <TextBlock>от 0 до 9.99%</TextBlock>
+                    <TextBlock>от 10 до 14.99%</TextBlock>
+                    <TextBlock>от 15% и более</TextBlock>
                 </ComboBox>
             </StackPanel>
         </Grid>

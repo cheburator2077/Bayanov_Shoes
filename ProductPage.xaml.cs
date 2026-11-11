@@ -20,13 +20,21 @@ namespace Bayanov_Shoes
     /// </summary>
     public partial class ProductPage : Page
     {
-        public ProductPage()
+        public ProductPage(User user)
         {
-            var currentservice = Bayanov41SizeEntities.GetContext().Product.ToList();
             InitializeComponent();
+            FIOTB.Text = "Вы авторизованы как " + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
+            switch(user.UserRole)
+            {
+                case 1:
+                    Role.Text = "Роль: Клиент"; break;
+                case 2:
+                    Role.Text = "Роль: Менеджер"; break;
+                case 3:
+                    Role.Text = "Роль: Администратор"; break;
+            }
+            var currentservice = Bayanov41SizeEntities.GetContext().Product.ToList();
             ProductListView.ItemsSource = currentservice;
-            ComboType.SelectedIndex = 0;
-            UpdateProducts();
         }
 
         private void UpdateProducts()
@@ -38,11 +46,11 @@ namespace Bayanov_Shoes
             }
             if (ComboType.SelectedIndex == 1)
             {
-                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 0 && p.ProductDiscountAmount < 10)).ToList();
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 0 && p.ProductDiscountAmount < 9.99)).ToList();
             }
             if (ComboType.SelectedIndex == 2)
             {
-                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 10 && p.ProductDiscountAmount < 15)).ToList();
+                currentProducts = currentProducts.Where(p => (p.ProductDiscountAmount >= 10 && p.ProductDiscountAmount < 14.99)).ToList();
             }
             if (ComboType.SelectedIndex == 3)
             {
