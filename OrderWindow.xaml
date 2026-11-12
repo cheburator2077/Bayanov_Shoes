@@ -24,14 +24,16 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="Дата формирования заказа" VerticalAlignment="Center" Grid.Row="0"/>
-
+        
         <TextBlock Text="Дата доставки заказа" VerticalAlignment="Center" Grid.Row="1"/>
+
         <TextBlock Text="ФИО клиента" VerticalAlignment="Center" Grid.Row="2"/>
         <TextBlock Name="ClientTB" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        
         <TextBlock Text="Номер" VerticalAlignment="Center" Grid.Row="3"/>
         <TextBlock Name="TBOrderID" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
         <TextBlock Text="Пункт выдачи" VerticalAlignment="Center" Grid.Row="5"/>
-        <ComboBox Name="ComboOrderPickUp" Width="650" Grid.Row="5" Grid.Column="1" SelectionChanged="ComboOrderPickUp_SelectionChanged"/>
         <Button Name="SaveBtn" Content="Сохранить" Grid.Column="1" Grid.Row="6"/>
 
         <ListView Name="MenuListView" Margin="5" HorizontalContentAlignment="Stretch" Grid.Row="4" Grid.ColumnSpan="2">

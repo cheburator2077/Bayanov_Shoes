@@ -13,6 +13,7 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="40 0 0 0" VerticalAlignment="Bottom">
@@ -52,7 +53,7 @@
             </StackPanel>
         </Grid>
 
-        <ListView Name="ProductListView" Margin="5" HorizontalContentAlignment="Stretch" Grid.Row="3">
+        <ListView Name="ProductListView" Margin="5" HorizontalContentAlignment="Stretch" Grid.Row="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Gray" BorderThickness="1">
@@ -85,5 +86,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button Name="OrderBtn" Content="Просмотр заказа" Grid.Row="3" Height="40" HorizontalAlignment="Right" Margin="0 0 15 0" Visibility="Collapsed" Click="OrderBtn_Click"/>
     </Grid>
 </Page>

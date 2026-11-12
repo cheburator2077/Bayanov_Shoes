@@ -88,5 +88,10 @@ namespace Bayanov_Shoes
         {
             UpdateProducts();
         }
+
+        private void OrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

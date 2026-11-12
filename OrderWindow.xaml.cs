@@ -21,14 +21,14 @@ namespace Bayanov_Shoes
     public partial class OrderWindow : Page
     {
         List<OrderProduct> selectedOrderProducts = new List<OrderProduct>();
-        List<Product> selecteProducts = new List<Product>();
+        List<Product> selectedProducts = new List<Product>();
         private Order currentOrder = new Order();
         private OrderProduct currentOrderProduct = new OrderProduct();
         public OrderWindow(List<OrderProduct> selectedOrderProducts, List<Product> selecteProducts, string FIO)
         {
             InitializeComponent();
             var currentPickUps = Bayanov41SizeEntities.GetContext().PickUpPoint.ToList();
-            ComboOrderPickUp.ItemsSource = selectedOrderProducts;
+            //ComboOrderPickUp.ItemsSource = selectedOrderProducts;
 
             ClientTB.Text = FIO;
             TBOrderID.Text = selectedOrderProducts.First().ProductID.ToString();
@@ -45,13 +45,9 @@ namespace Bayanov_Shoes
             }
 
             this.selectedOrderProducts = selectedOrderProducts;
-            this.selecteProducts = selecteProducts;
-            //там ордердп дописать
+            this.selectedProducts = selecteProducts;
+            //там ордердп дописать(дата заказа)
             //здесь должна быть функция SetDeliveryDate()
-        }
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
