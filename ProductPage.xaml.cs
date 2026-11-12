@@ -23,18 +23,28 @@ namespace Bayanov_Shoes
         public ProductPage(User user)
         {
             InitializeComponent();
-            FIOTB.Text = "Вы авторизованы как " + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
-            switch(user.UserRole)
+            if (user == null)
             {
-                case 1:
-                    Role.Text = "Роль: Клиент"; break;
-                case 2:
-                    Role.Text = "Роль: Менеджер"; break;
-                case 3:
-                    Role.Text = "Роль: Администратор"; break;
+                FIOTB.Text = "Вы авторизованы как гость";
+                Role.Text = "Роль: Гость";
             }
-            var currentservice = Bayanov41SizeEntities.GetContext().Product.ToList();
-            ProductListView.ItemsSource = currentservice;
+            else
+            {
+                FIOTB.Text = "Вы авторизованы как " + user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
+                switch (user.UserRole)
+                {
+                    case 1:
+                        Role.Text = "Роль: Клиент"; break;
+                    case 2:
+                        Role.Text = "Роль: Менеджер"; break;
+                    case 3:
+                        Role.Text = "Роль: Администратор"; break;
+                }
+                var currentservice = Bayanov41SizeEntities.GetContext().Product.ToList();
+                ProductListView.ItemsSource = currentservice;
+            }
+            ComboType.SelectedIndex = 0;
+            UpdateProducts();
         }
 
         private void UpdateProducts()

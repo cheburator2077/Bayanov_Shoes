@@ -54,11 +54,18 @@ namespace Bayanov_Shoes
                 Manager.MainFrame.Navigate(new ProductPage(user));
                 LoginTB.Text = "";
                 PasswordTB.Text = "";
+                CaptchaTB.Text = "";
+                CaptchaText.Visibility = Visibility.Collapsed;
+                CaptchaTB.Visibility = Visibility.Collapsed;
+                CaptchaPanel.Visibility = Visibility.Collapsed;
+                captchaRequired = false;
             }
             else
             {
                 MessageBox.Show("Введены неверные данные");
                 captchaRequired = true;
+                LoginTB.Text = "";
+                PasswordTB.Text = "";
                 ShowCaptcha();
             }
         }
@@ -67,8 +74,7 @@ namespace Bayanov_Shoes
         {
             string chars = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789";
             Random rnd = new Random();
-            captchaCode = new string(Enumerable.Range(0, 4)
-                .Select(_ => chars[rnd.Next(chars.Length)]).ToArray());
+            captchaCode = new string(Enumerable.Range(0, 4).Select(_ => chars[rnd.Next(chars.Length)]).ToArray());
 
             captchaOneWord.Text = captchaCode[0].ToString();
             captchaTwoWord.Text = captchaCode[1].ToString();
@@ -106,6 +112,9 @@ namespace Bayanov_Shoes
                     LoginTB.IsEnabled = true;
                     PasswordTB.IsEnabled = true;
                     CaptchaTB.IsEnabled = true;
+                    LoginTB.Text = "";
+                    PasswordTB.Text = "";
+                    CaptchaTB.Text = "";
                     LoginBtn.Content = "Войти";
                     ShowCaptcha();
                 }
@@ -115,7 +124,11 @@ namespace Bayanov_Shoes
 
         private void LoginHostBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new ProductPage(null));
+            CaptchaText.Visibility = Visibility.Collapsed;
+            CaptchaTB.Visibility = Visibility.Collapsed;
+            CaptchaPanel.Visibility = Visibility.Collapsed;
+            captchaRequired = false;
         }
     }
 }

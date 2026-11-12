@@ -30,7 +30,7 @@
 
         <TextBlock Name="CaptchaText" Text="Введи символы с CAPTCHA" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20" Margin="15" Visibility="Collapsed"/>
         <TextBox Name="CaptchaTB" Grid.Row="1" Grid.Column="1" Width="100" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,15,0" Visibility="Collapsed"/>
-        <StackPanel Name="CaptchaPanel" Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Visibility="Collapsed">
+        <StackPanel Name="CaptchaPanel" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Visibility="Collapsed" Margin="0 0 0 0">
             <TextBlock Name="captchaOneWord"   FontSize="22" Margin="30,0,0,0"/>
             <TextBlock Name="captchaTwoWord"   FontSize="22" TextDecorations="StrikeThrough" Margin="0,5,0,0"/>
             <TextBlock Name="captchaThreeWord" FontSize="22" TextDecorations="StrikeThrough"/>

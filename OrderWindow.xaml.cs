@@ -49,5 +49,10 @@ namespace Bayanov_Shoes
             //там ордердп дописать(дата заказа)
             //здесь должна быть функция SetDeliveryDate()
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
