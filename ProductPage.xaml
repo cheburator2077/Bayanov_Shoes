@@ -54,6 +54,11 @@
         </Grid>
 
         <ListView Name="ProductListView" Margin="5" HorizontalContentAlignment="Stretch" Grid.Row="2">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Добавить к заказу" Click="MenuItem_Click_1"></MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border BorderBrush="Gray" BorderThickness="1">
@@ -67,7 +72,7 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
                             <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="4" Stretch="Uniform">
                                 <Image.Source>
@@ -77,7 +82,7 @@
                             <TextBlock Style="{StaticResource MyStyle}" Text="{Binding ProductName}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"/>
                             <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ProductDescription}" TextWrapping="Wrap" Margin="0,5,0,0" VerticalAlignment="Top" FontSize="22"/>
                             <TextBlock Style="{StaticResource MyStyle}" Text="{Binding ProductManufacturer}" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left"/>
-                            <TextBlock Style="{StaticResource MyStyle}" Text="{Binding ProductCost, StringFormat='{}{0} руб.'}" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left"/>
+                            <TextBlock Style="{StaticResource MyStyle}" Text="{Binding ProductCost, StringFormat='{}{0} руб.'}" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3"/>
                             <TextBlock Style="{StaticResource MyStyle}" Text="Скидка" Grid.Column="2" Grid.Row="0"/>
                             <TextBlock Text="{Binding ProductDiscountAmountInt, StringFormat='{}{0} %'}" Grid.Column="2" Grid.Row="1" Grid.RowSpan="3" 
                                        FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center"/>

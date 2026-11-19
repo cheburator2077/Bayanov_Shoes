@@ -41,6 +41,7 @@ namespace Bayanov_Shoes
             }
         }
         public int ProductQuantityInStock { get; set; }
+        public int ProductQuantity { get; set; }
         public string ProductDescription { get; set; }
         public string ProductPhotoPath { get; set; }
         public string ProductPhotoPathFull

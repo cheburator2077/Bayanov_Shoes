@@ -72,6 +72,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BayanovModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="CheckWindow.xaml.cs">
+      <DependentUpon>CheckWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>BayanovModel.tt</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CheckWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
